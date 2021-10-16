@@ -145,7 +145,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allowKeyboardControl: 0
+  deadWhenOutOfEnergy: 1
+  deadWhenNoVelocity: 1
   rb: {fileID: 282150167180538695}
   swimSpeed: 1
   steerStrength: 0.1
+  energy: 100
+  maxEnergy: 100
+  stomach: 0
+  maxStomach: 100
+  energyConsumptionFactor: 0.1
   currentOrientation: 0

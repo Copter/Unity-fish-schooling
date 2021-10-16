@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2471e501f21ac484dbaa4e1171a3c311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  randomPositionOnGameStart: 0
   foodAmount: 500
 --- !u!1 &268062661
 GameObject:
@@ -591,6 +592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSpeed: 1
+  fishCount: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -953,6 +955,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3467414528057178209, guid: 84ca12ca373ef47408c706f3626bc4d6,
+        type: 3}
+      propertyPath: deadWhenNoVelocity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3467414528057178209, guid: 84ca12ca373ef47408c706f3626bc4d6,
+        type: 3}
+      propertyPath: deadWhenOutOfEnergy
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 282150167180538689, guid: 84ca12ca373ef47408c706f3626bc4d6,
         type: 3}
       propertyPath: m_Name

@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class foodZone : MonoBehaviour
 {
+    public bool randomPositionOnGameStart = true;
     public float foodAmount = 500f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(randomPositionOnGameStart) {
+            transform.position = new Vector3(Random.Range(-14,14), Random.Range(-6,6), 0);
+        }
     }
 
     // Update is called once per frame

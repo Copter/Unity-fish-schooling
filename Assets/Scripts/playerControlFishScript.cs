@@ -5,12 +5,21 @@ using UnityEngine;
 public class playerControlFishScript : MonoBehaviour
 {
     public bool allowKeyboardControl = false;
+    public bool deadWhenOutOfEnergy = true;
+    public bool deadWhenNoVelocity = false;
     
     public Rigidbody2D rb;
-    //public float swimForce = 100;
 	public float swimSpeed = 1f;
 	Vector2 initialVector;
 	public float steerStrength = 0.1f;
+
+    public float energy = 100f;
+    public float maxEnergy = 100f;
+    public float stomach = 0f;
+    public float maxStomach = 100f;
+
+    public float energyConsumptionFactor = 0.1f;
+    // The factor of the rate which energy is consumed.
 
 	public enum Orientation {MoveForward, SteerLeft, SteerRight};
 	public Orientation currentOrientation;
@@ -57,6 +66,10 @@ public class playerControlFishScript : MonoBehaviour
 			moveSteerLeft();
 		else if(currentOrientation == Orientation.SteerRight)
 			moveSteerRight();
+        
+        energyCalculations();
+
+        deadConditions();
 
 		transform.rotation = Quaternion.LookRotation(Vector3.forward, rb.velocity);
     }
@@ -86,11 +99,34 @@ public class playerControlFishScript : MonoBehaviour
 		rb.velocity = steerDirVector + (swimSpeed * rb.velocity.normalized);
 	}
 
+    public void energyCalculations()
+    {
+        energy -= rb.velocity.magnitude * energyConsumptionFactor;
+
+        if(energy < (maxEnergy - 1f) && stomach > 0) {
+            energy += 1f;
+            stomach -= 1f;
+        }
+    }
+
+    public void deadConditions() 
+    {
+        if(deadWhenOutOfEnergy && energy <= 0)
+        {
+            Destroy(gameObject);
+        }
+        if(deadWhenNoVelocity && rb.velocity.magnitude == 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 	void OnTriggerStay2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "food")
+        if (coll.gameObject.tag == "food" && stomach < maxStomach)
         {
             coll.gameObject.GetComponent<foodZone>().foodAmount += -1f;
+            stomach += 1f;
         }
     }
 }
