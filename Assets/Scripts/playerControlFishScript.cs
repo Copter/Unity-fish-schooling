@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class playerControlFishScript : MonoBehaviour
 {
+    public bool allowKeyboardControl = false;
+    
     public Rigidbody2D rb;
     //public float swimForce = 100;
 	public float swimSpeed = 1f;
@@ -23,27 +25,30 @@ public class playerControlFishScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        if(allowKeyboardControl)
         {
-            currentOrientation = Orientation.SteerLeft;
-        }
-        else if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
-        {
-            currentOrientation = Orientation.SteerRight;
-        }
-        else
-        {
-            currentOrientation = Orientation.MoveForward;
-        }
+            if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+            {
+                currentOrientation = Orientation.SteerLeft;
+            }
+            else if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+            {
+                currentOrientation = Orientation.SteerRight;
+            }
+            else
+            {
+                currentOrientation = Orientation.MoveForward;
+            }
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            swimSpeed += 0.01f;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            if (swimSpeed > 0.011f)
-                swimSpeed -= 0.01f;
+            if (Input.GetKey(KeyCode.W))
+            {
+                swimSpeed += 0.01f;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                if (swimSpeed > 0.011f)
+                    swimSpeed -= 0.01f;
+            }
         }
 
 		if(currentOrientation == Orientation.MoveForward)	
@@ -81,17 +86,11 @@ public class playerControlFishScript : MonoBehaviour
 		rb.velocity = steerDirVector + (swimSpeed * rb.velocity.normalized);
 	}
 
-	/*
-	void FixedUpdate()
+	void OnTriggerStay2D(Collider2D coll)
     {
-        if (rb.velocity.x <= 0.25 && rb.velocity.y <= 0.25)
+        if (coll.gameObject.tag == "food")
         {
-            rb.velocity = Vector2.zero;
-            var randAngle = Random.Range(0, 360);
-            transform.rotation = Quaternion.Euler(Vector3.forward * randAngle);
-            var moveVec = transform.right * swimForce;
-            rb.AddForce(moveVec);
+            coll.gameObject.GetComponent<foodZone>().foodAmount += -1f;
         }
     }
-	*/
 }

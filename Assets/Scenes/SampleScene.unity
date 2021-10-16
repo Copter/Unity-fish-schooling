@@ -123,6 +123,120 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &218446134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 218446136}
+  - component: {fileID: 218446135}
+  - component: {fileID: 218446137}
+  - component: {fileID: 218446138}
+  m_Layer: 0
+  m_Name: food
+  m_TagString: food
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &218446135
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218446134}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
+  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847,
+    type: 3}
+  m_Color: {r: 0, g: 1, b: 0, a: 0.49803922}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &218446136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218446134}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10, y: 0, z: 0}
+  m_LocalScale: {x: 8, y: 8, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &218446137
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218446134}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &218446138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218446134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471e501f21ac484dbaa4e1171a3c311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodAmount: 500
 --- !u!1 &268062661
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +345,7 @@ Transform:
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &291441787
 PrefabInstance:
@@ -245,6 +359,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: fish (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 282150167180538689, guid: 84ca12ca373ef47408c706f3626bc4d6,
+        type: 3}
+      propertyPath: m_TagString
+      value: fish
+      objectReference: {fileID: 0}
     - target: {fileID: 282150167180538692, guid: 84ca12ca373ef47408c706f3626bc4d6,
         type: 3}
       propertyPath: m_Size.x
@@ -254,16 +373,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 1.3075
-      objectReference: {fileID: 0}
-    - target: {fileID: 282150167180538694, guid: 84ca12ca373ef47408c706f3626bc4d6,
-        type: 3}
-      propertyPath: swimSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 282150167180538694, guid: 84ca12ca373ef47408c706f3626bc4d6,
-        type: 3}
-      propertyPath: steerStrength
-      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 282150167180538695, guid: 84ca12ca373ef47408c706f3626bc4d6,
         type: 3}
@@ -440,7 +549,7 @@ Transform:
   m_LocalScale: {x: 37.562, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -551,6 +660,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: fish (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 282150167180538689, guid: 84ca12ca373ef47408c706f3626bc4d6,
+        type: 3}
+      propertyPath: m_TagString
+      value: fish
+      objectReference: {fileID: 0}
     - target: {fileID: 282150167180538692, guid: 84ca12ca373ef47408c706f3626bc4d6,
         type: 3}
       propertyPath: m_Size.x
@@ -560,16 +674,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 1.3075
-      objectReference: {fileID: 0}
-    - target: {fileID: 282150167180538694, guid: 84ca12ca373ef47408c706f3626bc4d6,
-        type: 3}
-      propertyPath: swimSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 282150167180538694, guid: 84ca12ca373ef47408c706f3626bc4d6,
-        type: 3}
-      propertyPath: steerStrength
-      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 282150167180538695, guid: 84ca12ca373ef47408c706f3626bc4d6,
         type: 3}
@@ -650,6 +754,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: fish (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 282150167180538689, guid: 84ca12ca373ef47408c706f3626bc4d6,
+        type: 3}
+      propertyPath: m_TagString
+      value: fish
+      objectReference: {fileID: 0}
     - target: {fileID: 282150167180538692, guid: 84ca12ca373ef47408c706f3626bc4d6,
         type: 3}
       propertyPath: m_Size.x
@@ -659,16 +768,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 1.3075
-      objectReference: {fileID: 0}
-    - target: {fileID: 282150167180538694, guid: 84ca12ca373ef47408c706f3626bc4d6,
-        type: 3}
-      propertyPath: swimSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 282150167180538694, guid: 84ca12ca373ef47408c706f3626bc4d6,
-        type: 3}
-      propertyPath: steerStrength
-      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 282150167180538695, guid: 84ca12ca373ef47408c706f3626bc4d6,
         type: 3}
@@ -845,36 +944,8 @@ Transform:
   m_LocalScale: {x: 37.562, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1202550355 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 282150167180538689, guid: 84ca12ca373ef47408c706f3626bc4d6,
-    type: 3}
-  m_PrefabInstance: {fileID: 282150169073420746}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1202550356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1202550355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f243e17bdda9646a2c89182d755862, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 1202550357}
-  swimSpeed: 1
-  steerStrength: 0.1
-  currentOrientation: 0
---- !u!50 &1202550357 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 282150167180538695, guid: 84ca12ca373ef47408c706f3626bc4d6,
-    type: 3}
-  m_PrefabInstance: {fileID: 282150169073420746}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1432702998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -887,6 +958,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: fish (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 282150167180538689, guid: 84ca12ca373ef47408c706f3626bc4d6,
+        type: 3}
+      propertyPath: m_TagString
+      value: fish
+      objectReference: {fileID: 0}
     - target: {fileID: 282150167180538692, guid: 84ca12ca373ef47408c706f3626bc4d6,
         type: 3}
       propertyPath: m_Size.x
@@ -896,16 +972,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 1.3075
-      objectReference: {fileID: 0}
-    - target: {fileID: 282150167180538694, guid: 84ca12ca373ef47408c706f3626bc4d6,
-        type: 3}
-      propertyPath: swimSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 282150167180538694, guid: 84ca12ca373ef47408c706f3626bc4d6,
-        type: 3}
-      propertyPath: steerStrength
-      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 282150167180538695, guid: 84ca12ca373ef47408c706f3626bc4d6,
         type: 3}
@@ -1143,7 +1209,7 @@ Transform:
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &282150169073420746
 PrefabInstance:
@@ -1152,9 +1218,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3467414528057178209, guid: 84ca12ca373ef47408c706f3626bc4d6,
+        type: 3}
+      propertyPath: allowKeyboardControl
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 282150167180538689, guid: 84ca12ca373ef47408c706f3626bc4d6,
         type: 3}
       propertyPath: m_Name
+      value: fish
+      objectReference: {fileID: 0}
+    - target: {fileID: 282150167180538689, guid: 84ca12ca373ef47408c706f3626bc4d6,
+        type: 3}
+      propertyPath: m_TagString
       value: fish
       objectReference: {fileID: 0}
     - target: {fileID: 282150167180538692, guid: 84ca12ca373ef47408c706f3626bc4d6,
@@ -1166,21 +1242,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 1.3075
-      objectReference: {fileID: 0}
-    - target: {fileID: 282150167180538694, guid: 84ca12ca373ef47408c706f3626bc4d6,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 282150167180538694, guid: 84ca12ca373ef47408c706f3626bc4d6,
-        type: 3}
-      propertyPath: swimSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 282150167180538694, guid: 84ca12ca373ef47408c706f3626bc4d6,
-        type: 3}
-      propertyPath: steerStrength
-      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 282150167180538695, guid: 84ca12ca373ef47408c706f3626bc4d6,
         type: 3}

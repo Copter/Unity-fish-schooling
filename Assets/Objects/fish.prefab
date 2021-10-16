@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 282150167180538693}
   - component: {fileID: 282150167180538692}
   - component: {fileID: 282150167180538695}
-  - component: {fileID: 282150167180538694}
+  - component: {fileID: -3467414528057178209}
   m_Layer: 0
   m_Name: fish
   m_TagString: Untagged
@@ -48,6 +48,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -59,6 +61,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -99,7 +102,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3075, y: 0.505}
+    oldSize: {x: 0.505, y: 1.3075}
     newSize: {x: 1.3075, y: 0.505}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -129,7 +132,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &282150167180538694
+--- !u!114 &-3467414528057178209
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,8 +141,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 282150167180538689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9837ed3b816ef547b18d4faf566ee46, type: 3}
+  m_Script: {fileID: 11500000, guid: d8f243e17bdda9646a2c89182d755862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allowKeyboardControl: 0
   rb: {fileID: 282150167180538695}
-  swimForce: 100
+  swimSpeed: 1
+  steerStrength: 0.1
+  currentOrientation: 0
